@@ -1,0 +1,13 @@
+*.py[cod]
+common/*.pyc
+mnist.py
+output/
+output_test/
+data/
+.cache
+logs/
+*.ipynb
+__pycache__
+build/
+dist/
+mctspy.egg-info/
