@@ -1,5 +1,5 @@
 # Discovering-faster-matrix-multiplication-algorithms-with-RL
-Resources
+###Resources
 
 - supplementary_information.pdf, has information and pseudo codes related to the paper we are working on.
 - TensorReview.pdf, helped us to understand the what tensors are and also about tensor decompositions.
