@@ -12,8 +12,10 @@ create a logs directory of preferred name{logs_1} in the logs directory, and in 
 ```bash
 python main.py
 ```
-
-
+To View the Results 
+```bash
+tensorboard --logdir ./logs/logs_1
+```
 
 # Furthur Optimizations
 - Policy Improvement in MCTS
