@@ -8,7 +8,7 @@ Make sure you have the following libraries
 - python                version>= 3.10.8
 
 # Usage
-create a logs directory of preferred name{logs_1} in the logs directory, and in ```main.py``` change ln:68 to the newly created logs ex:{logs/logs_1}. then we are finally ready to go. Now execute the following command.
+create a logs directory of preferred name{logs_1} in the logs directory, and in ```main.py``` change ln:28 to the newly created logs ex:{logs/logs_1}. then we are finally ready to go. Now execute the following command.
 ```bash
 python main.py
 ```
