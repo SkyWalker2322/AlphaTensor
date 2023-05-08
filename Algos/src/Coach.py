@@ -2,10 +2,7 @@ from typing import *
 import collections
 from tqdm import tqdm
 import numpy as np
-import random
-
 import pytorch_lightning as pl
-
 from Environment import Environment, State
 from MCTS import MCTS
 from NeuralNet import NeuralNet, DataModule
@@ -84,7 +81,7 @@ class Coach:
             
 
             # for _ in range(self.num_self_play_games):
-            #     self.examples.extend(self.environment.generate_synthetic_examples(self.max_num_steps))
+                # self.examples.extend(self.environment.generate_synthetic_examples(self.max_num_steps))
 
             data_module = DataModule(self.examples, batch_size=self.batch_size)
 
