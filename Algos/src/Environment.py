@@ -15,7 +15,6 @@ class State:
     def rank_upper_bound(self) -> int:
         return float(np.sum(np.linalg.matrix_rank(self.tensor)))
 
-
 class Action:
     def __init__(self, u, v, w):
         u = np.array(u, dtype=int)
@@ -35,13 +34,13 @@ w_values = [-1, 0, 1]
 w = list(itertools.product(w_values, repeat=4))
 all_tuples = list(itertools.product(u, v, w))
 
-Actions = []
+Actions = []    #appending all possible actions
 for tup in all_tuples:
     Actions.append(Action(tup[0], tup[1], tup[2]))
 
-ACTIONS = Actions
+ACTIONS = Actions      # Action space
 
-# INIT_STATE = State(np.sum([ACTIONS[i].tensor for i in [0, 1, 2]], axis=0))
+
 INIT_STATE = State([
     [[1, 0, 0, 0],
      [0, 1, 0, 0],
@@ -63,9 +62,6 @@ INIT_STATE = State([
 
 
 class Environment:
-    """This class have no state. De facto it is a namespace of functions which
-    define the environment.
-    """
 
     @property
     def num_actions(self):
@@ -80,6 +76,8 @@ class Environment:
     def get_next_state(self, state: State, action_idx: int) -> State:
         return State(state.tensor - ACTIONS[action_idx].tensor)
 
+
+    #reward functions
     def get_intermediate_reward(self, state: State, action_idx: int) -> float:
         return -1.0
 
@@ -89,6 +87,7 @@ class Environment:
 
         return -state.rank_upper_bound
 
+    #generates Synthetic examples for better fitting of neural networks
     def generate_synthetic_examples(self, max_num_steps: int):
         n = min(self.num_actions, max_num_steps)
         indices = np.random.choice(self.num_actions, size=n)
