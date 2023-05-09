@@ -10,7 +10,7 @@ The paper goes on to explain how matrix multiplication can be represented by a 3
 
 ### Tensor Game
 TensorGame is a single-player 3D board game that models tensor decomposition as a reinforcement learning problem. The goal of the game is to find a decomposition of a given tensor T as a sum of R outer products with R as small as possible. The game starts with the initial state set to be the target tensor T. In each step, the player selects three vectors u(t), v(t), and w(t), and the state is updated recursively. 
-<img src="/resources/image5.jpeg" alt="Alt text" display="centre">
+<img src="/resources/image5.jpeg" alt="Alt text" display="centre"><br>
 The game ends after R steps, and the player wins if the resulting tensor is zero.
 <img src="/resources/image4.jpeg" alt="Alt text">
 Negative rewards are applied at each step, encouraging the player to reach the zero-tensor in fewer steps. An additional negative reward is applied if the player terminates with a non-zero vector after a preset maximum number of moves. The game provides a framework to explore the combinatorial space of tensor decomposition in a systematic way.
